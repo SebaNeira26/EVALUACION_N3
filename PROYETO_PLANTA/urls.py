@@ -1,5 +1,5 @@
 """
-URL configuration for JARDINERIA project.
+URL configuration for JARDINERA project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -16,18 +16,21 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
 from . import views
 from . import views
 urlpatterns = [
+    path('JARDINERA/', include('JARDINERA.urls')),
     path('admin/', admin.site.urls),
-    path('contacto/', views.contacto, name='contacto'),
+  
     path('producto/add/', views.producto_add, name='producto_add'),
     path('producto/list/', views.producto_list, name='producto_list'),
     path('producto/edit/<int:pk>/', views.producto_edit, name='producto_edit'),
     path('producto/delete/<int:id>/', views.producto_delete, name='producto_delete'),
     path('productos/', views.lista_productos, name='lista_productos'),
-    # Asumiendo que quieres una ruta para el login y el index
     path('login/', views.login_view, name='login'),
     path('', views.index, name='index'),
+    path('nosotros/', views.nosotros, name='nosotros'),
+    path('servicios/', views.servicios, name='servicios'),
+    path('contacto/', views.contacto, name='contacto'),
 ]

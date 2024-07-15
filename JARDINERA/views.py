@@ -39,6 +39,7 @@ def producto_delete(request, id):
 def lista_productos(request):
     productos = Producto.objects.all()  
     return render(request, 'producto_list.html', {'productos': productos})
+
 def lista_productos(request):
     productos = Producto.objects.all()
     return render(request, 'productos.html', {'productos': productos})
@@ -48,3 +49,10 @@ def login_view(request):
 
 def index(request):
     return render(request, 'index.html')
+
+def nosotros(request):
+    return render(request, 'nosotros.html')
+def servicios(request):
+    return render(request, 'servicios.html')
+def contacto(request):
+    return render(request, 'contacto.html')
